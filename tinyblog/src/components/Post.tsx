@@ -1,20 +1,34 @@
 import React from 'react'
+import { Card } from 'react-bootstrap'
 import { IPost } from '../model'
+import { SectionEnum } from '../sections'
 
 import { Props } from './PostsList'
 
 //title,paragraph,tags
 
 
-const Post = ({title, tags}: IPost) => {
-  // const mappedTags = tags.map((tag) => tag.concat(' '));
-  // (tags.forEach(i => console.log(i)))
-  // console.log(tags)
+const Post = ({title, tags, body}: IPost) => {
+ 
   return (
     <div>
-     
-     {/* <Sections /> */}
-     {title}
+    <Card
+        style={{
+          width: "15rem",
+          margin: "10px",
+          height: "20rem",
+          border: "solid",
+        }}
+      >
+        <Card.Body>
+        
+          <Card.Title style={{ textAlign: "center" }}>
+            {title}
+          </Card.Title>
+          <Card.Text>{body}</Card.Text>
+          <Card.Footer>{tags}</Card.Footer>
+        </Card.Body>
+      </Card>
     </div>
   )
 }

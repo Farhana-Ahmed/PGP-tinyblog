@@ -6,38 +6,28 @@ import { SectionEnum } from "../sections";
 
 export interface Props {
   posts: IPost[];
+  tag:string
 }
 //may be put checking tags here
-const PostList = ({ posts }: Props) => {
+const PostsList = ({ posts,tag }: Props) => {
+  const filteredPosts = posts.filter(post => post.tags?.includes(tag.toLowerCase()))
 
-  const getTags = () => {
-    const tags = posts.map(post => post.tags);
-  let finalTags;
-for(let i =0;i < tags.length ; i++) {
-finalTags= tags[i]
-return (finalTags[0])
-
-}
-return finalTags;
-  }
-getTags()
   return (
     <div>
-      
-      {posts.map((post, index) => (
-          getTags() === SectionEnum.American ?
-       
-        <Post
-          title={post.title}
-          body={post.body}
-          tags={post.tags}
-          key={index}
-        /> 
-      
-      :null
-      ))}
+      <section> <h1>{tag}</h1>
+      {filteredPosts.map((post, index) =>
+        // getTags() === SectionEnum.American ? (
+          <Post
+            title={post.title}
+            body={post.body}
+            tags={post.tags}
+            key={index}
+          />
+        // ) : null
+      )}
+      </section>
     </div>
   );
 };
 
-export default PostList;
+export default PostsList;
