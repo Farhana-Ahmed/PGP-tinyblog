@@ -5,7 +5,7 @@ import PostsList from "./PostsList";
 
 const Home = () => {
   const [posts, setPosts] = useState<IPost[]>([]);
-  let tags: string[] = ["american", "english", "love", "magical", "mystery"];
+  let tags: string[] = ["American", "English", "Love", "Magical", "Mystery"];
   useEffect(() => {
     const getData = () => {
       const data = db;
@@ -14,7 +14,8 @@ const Home = () => {
     getData();
   }, []);
   return (
-    <div style={{ display: "flex" }}>
+    //style:display flex
+    <div >
       {/* <h1>Tiny Blog</h1> */}
       {tags.map((tag, index) => (
         <PostsList posts={posts} tag={tag} key={index} />

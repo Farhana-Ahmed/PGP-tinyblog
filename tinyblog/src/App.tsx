@@ -1,12 +1,12 @@
 import "./App.css";
 import Home from "./components/Home";
-
+import './index.css';
 function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">
-      Tiny blog
-    </h1>
+        <h1 className="App-header">
+        Tiny blog
+      </h1>
       <Home />
     </div>
   );
