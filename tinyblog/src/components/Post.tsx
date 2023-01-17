@@ -1,36 +1,28 @@
-import React from 'react'
-import { Card } from 'react-bootstrap'
-import { IPost } from '../model'
-import { SectionEnum } from '../sections'
-
-import { Props } from './PostsList'
+import React from "react";
+import { Card } from "react-bootstrap";
+import { IPost } from "../model";
 
 //title,paragraph,tags
 
-
-const Post = ({title, tags, body}: IPost) => {
- 
+const Post = ({ title, tags, body }: IPost) => {
   return (
     <div>
-    <Card
+      <Card
         style={{
           width: "15rem",
           margin: "10px",
-          height: "20rem",
+          height: "30rem",
           border: "solid",
         }}
       >
         <Card.Body>
-        
-          <Card.Title style={{ textAlign: "center" }}>
-            {title}
-          </Card.Title>
+          <Card.Title style={{ textAlign: "center" }}>{title}</Card.Title>
           <Card.Text>{body}</Card.Text>
-          <Card.Footer>{tags}</Card.Footer>
+          <Card.Footer>{tags.join('  ')}</Card.Footer>
         </Card.Body>
       </Card>
     </div>
-  )
-}
+  );
+};
 
-export default Post
+export default Post;

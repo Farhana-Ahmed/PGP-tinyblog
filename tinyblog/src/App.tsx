@@ -1,17 +1,13 @@
-// import axios from "axios";
-// import React, { useEffect, useState } from "react";
 import "./App.css";
 import Home from "./components/Home";
-// import PostsList from "./components/PostsList";
-// import { IPost } from "./model";
 
 function App() {
-
-  
   return (
     <div className="App">
+      <h1 className="text-3xl font-bold underline">
+      Tiny blog
+    </h1>
       <Home />
-      {/* <PostsList posts={posts} /> */}
     </div>
   );
 }
