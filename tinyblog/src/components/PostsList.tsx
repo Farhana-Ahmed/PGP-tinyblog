@@ -19,16 +19,18 @@ const PostsList = ({ posts, tag }: Props) => {
     }
   };
   return (
-    <div className="max-w-md mx-auto bg-blue rounded-xl shadow-md overflow-hidden md:max-w-2xl m-10 justify-center bg-orange-100">
+    <div className="max-w-md mx-auto bg-blue rounded-xl shadow-md overflow-hidden md:max-w-2xl m-10 justify-center bg-orange-100 ">
       <div className="md:flex justify-center">
         <div className="p-8 pb-16 m-10 justify-center">
-          <select onChange={handleChange}>
+         
+          <div className=" tracking-wide text-sm text-green-500 font-semibold justify-center text-4xl">
+            {tag}
+            
+          </div>
+          <select onChange={handleChange} >
             <option value="show">show</option>
             <option value="hide">hide</option>
           </select>
-          <div className=" tracking-wide text-sm text-green-500 font-semibold justify-center">
-            {tag}
-
             {visible ? (
               filteredPosts.map((post, index) => (
                 <Post
@@ -41,7 +43,6 @@ const PostsList = ({ posts, tag }: Props) => {
             ) : (
               <></>
             )}
-          </div>
         </div>
       </div>
     </div>
