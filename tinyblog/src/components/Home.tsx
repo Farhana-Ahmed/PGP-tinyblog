@@ -14,9 +14,7 @@ const Home = () => {
     getData();
   }, []);
   return (
-    //style:display flex
-    <div >
-      {/* <h1>Tiny Blog</h1> */}
+    <div className="">
       {tags.map((tag, index) => (
         <PostsList posts={posts} tag={tag} key={index} />
       ))}
