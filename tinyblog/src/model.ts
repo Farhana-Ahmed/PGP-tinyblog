@@ -1,4 +1,3 @@
-import { SectionEnum } from "./sections";
 
 export interface IPost {
     title: string;

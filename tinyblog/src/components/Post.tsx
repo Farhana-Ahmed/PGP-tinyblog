@@ -1,26 +1,8 @@
 import React from "react";
 import { IPost } from "../model";
 
-//title,paragraph,tags
-
 const Post = ({ title, tags, body }: IPost) => {
   return (
-    // <div>
-    //   <Card
-    //     style={{
-    //       width: "15rem",
-    //       margin: "10px",
-    //       height: "30rem",
-    //       border: "solid",
-    //     }}
-    //   >
-    //     <Card.Body>
-    //       <Card.Title style={{ textAlign: "center" }}>{title}</Card.Title>
-    //       <Card.Text>{body}</Card.Text>
-    //       <Card.Footer>{tags.join('  ')}</Card.Footer>
-    //     </Card.Body>
-    //   </Card>
-    // </div>
     <div className="max-w-md mx-auto bg-white rounded-xl shadow-md overflow-hidden md:max-w-2xl m-10">
       <div className="md:flex border-1 pb-10">
         <div className="p-8 ">

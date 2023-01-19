@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Dropdown, DropdownButton } from "react-bootstrap";
 import { IPost } from "../model";
 import Post from "./Post";
 export interface Props {
@@ -26,8 +25,11 @@ const PostsList = ({ posts, tag }: Props) => {
           <div className=" tracking-wide text-sm text-green-500 font-semibold justify-center text-4xl">
             {tag}
           </div>
-          <select onChange={handleChange}>
-            <option value=''>Choose an option</option>
+          <select
+            onChange={handleChange}
+            className="m-5 sbg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500   p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 "
+          >
+            <option value="">Choose an option</option>
             <option value="show">show</option>
             <option value="hide">hide</option>
           </select>
