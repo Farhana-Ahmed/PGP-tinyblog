@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { IPost } from "../model";
+import Filter from "./Filter";
 import Post from "./Post";
 export interface Props {
   posts: IPost[];
@@ -8,6 +9,8 @@ export interface Props {
 
 const PostsList = ({ posts, tag }: Props) => {
   const [visible, setVisible] = useState<Boolean>(false);
+  const [postsToshow, setPosts] = useState<IPost>({} as IPost);
+
   const filteredPosts = posts.filter((post) =>
     post.tags?.includes(tag.toLowerCase())
   );
@@ -18,12 +21,19 @@ const PostsList = ({ posts, tag }: Props) => {
       setVisible(false);
     }
   };
+
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setPosts(postsToshow);
+  };
   return (
+    <div>
+      
+        {/* {tagFilter === 'all' ? {filteredPosts}: null} */}
     <div className="max-w-md mx-auto bg-blue rounded-xl shadow-md overflow-hidden md:max-w-2xl m-10 justify-center bg-orange-100 ">
       <div className="md:flex justify-center">
         <div className="p-8 pb-16 m-10 justify-center">
           <div className=" tracking-wide text-sm text-green-500 font-semibold justify-center text-4xl">
-            {tag}
+            <button onClick={handleClick}> {tag}</button>
           </div>
           <select
             onChange={handleChange}
@@ -48,6 +58,7 @@ const PostsList = ({ posts, tag }: Props) => {
           )}
         </div>
       </div>
+    </div>
     </div>
   );
 };
