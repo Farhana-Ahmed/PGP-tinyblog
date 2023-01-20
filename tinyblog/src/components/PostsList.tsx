@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { IPost } from "../model";
-import Filter from "./Filter";
 import Post from "./Post";
 export interface Props {
   posts: IPost[];
